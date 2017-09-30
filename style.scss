@@ -1,0 +1,66 @@
+// Fonts
+@import url('https://fonts.googleapis.com/css?family=VT323');
+// Variables
+$font-stack: 'System','VT323', monospace;
+$bgcolo: #363647;
+$fontcolor: white;
+$hoverlink: rgba(0, 255, 0, 1.0);
+
+// Main body
+body{
+  margin-top: 150px;
+  font-size: 1.65em;
+  font-family: $font-stack;
+  background-color: $bgcolo;
+  color: $fontcolor;
+}
+
+// Container for the welcome message
+.info-box{
+  font-size: 1.2em;
+  margin: 0 auto;
+  box-sizing: border-box;
+  padding: 10px 0;
+  p{
+    margin: 0 auto;
+    text-align: left;
+    width: 350px;
+  }
+}
+
+
+//
+
+
+// The container for category boxes
+.main-box{
+  display: flex;
+  justify-content: center;
+  //align-items: center;    // Uncomment for a wavy effect
+  box-sizing: border-box;
+  flex-basis: 400px;
+  flex-wrap: nowrap;
+}
+
+// Category boxes
+.box{
+  padding: 0 55px;
+  flex-basis: 85px;
+
+}
+// Links
+ a{
+   text-decoration: none;
+   color: $fontcolor;
+ }
+ a:hover{
+    color: $hoverlink;
+ }
+
+ ul{
+   list-style-type: none;
+   padding: 10;
+ }
+ li{
+   padding: 3px;
+ }
