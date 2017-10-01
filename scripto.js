@@ -3,6 +3,8 @@ $(document).ready(function(){
   var today = new Date();
   var message;
 
+
+
   // Greeting user depending on the hour
   if (today.getHours() > 0 && today.getHours() < 12){
       message = "Good morning, user.";
@@ -13,6 +15,8 @@ $(document).ready(function(){
   };
   message += "</br>";
 
+
+
   // Telling what date is today
   var calendar = {1: "January", 2: "February", 3: "March", 4: "April", 5: "May", 6: "June", 7: "July",
                   8: "August", 9: "September", 10:"October", 11:"November", 12:"December"};
@@ -20,8 +24,11 @@ $(document).ready(function(){
   if (today.getDay() < 10) {
     message += "0";
   };
-  message += today.getDay() + " " + calendar[today.getMonth()] + ", " + today.getFullYear() + ".</br>";
+  message += today.getDay()+1 + " " + calendar[today.getMonth()+1] + ", " + today.getFullYear() + ".</br>";
   addWelcome(message);
+
+
+
   // Checking the current BTC->EUR
   var btc_url = "https://api.coindesk.com/v1/bpi/currentprice.json";
   $.getJSON(btc_url, function(data){
@@ -31,10 +38,14 @@ $(document).ready(function(){
   });
 });
 
+
+
 // Getting a random integer
 function getRandomInt(min, max) {
   return Math.floor(Math.random() * (max - min + 1) + min);
 }
+
+// Appending the <p> element with the message
 function addWelcome(msg){
   $("#welcome-message").append(msg);
 }
